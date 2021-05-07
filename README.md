@@ -19,7 +19,7 @@ There is a console app `ArnabDeveloper.HttpHealthCheck.ConsoleApp` in this repo
 which uses the library to check health of some http endpoints. This is to show 
 how you can use this library in your app.
 
-## Technology used
+## Tech stack
 
 - Visual Studio 2019
 - .NET 5
