@@ -7,6 +7,8 @@ This is a library to check health of HTTP endpoint.
 
 ## How to install
 
+This library has been hosted in 
+[NuGet](https://www.nuget.org/packages/ArnabDeveloper.HttpHealthCheck/). 
 Use below command to install this in your .NET application.
 
 ```
