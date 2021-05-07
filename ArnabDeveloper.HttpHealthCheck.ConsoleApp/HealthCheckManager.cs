@@ -37,11 +37,11 @@ namespace ArnabDeveloper.HttpHealthCheck.ConsoleApp
                     string.IsNullOrWhiteSpace(apiDetail.ApiCredential.UserName) ||
                     string.IsNullOrWhiteSpace(apiDetail.ApiCredential.Password))
                 {
-                    isApiHealthy = _healthCheck.IsApiHealthy(apiDetail.Url);
+                    isApiHealthy = _healthCheck.IsHealthy(apiDetail.Url);
                 }
                 else
                 {
-                    isApiHealthy = _healthCheck.IsApiHealthy(apiDetail.Url, apiDetail.ApiCredential);
+                    isApiHealthy = _healthCheck.IsHealthy(apiDetail.Url, apiDetail.ApiCredential);
                 }
                 string apiStatusMessage = isApiHealthy ? "OK" : "Error";
                 return $"{apiDetail.Name} status is: {apiStatusMessage}";
