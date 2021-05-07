@@ -7,7 +7,7 @@ you found one then comment on that issue with the details of how you want to con
 you don't find an issue of similar subject then create a new one and provide details of how you 
 want to contribute. If your work is approved then only start your work.
 
-You need Visual Studio 2019 and ASP.NET 5 to work on this project locally.
+You need Visual Studio 2019 and .NET 5 to work on this project locally.
 
 ## Getting started
 
