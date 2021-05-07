@@ -30,7 +30,7 @@ how you can use this library in your app.
 
 ## License
 
-[MIT License](https://github.com/Arnab-Developer/ApiHealthCheck/blob/main/LICENSE)
+[MIT License](https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck/blob/main/LICENSE)
 
 ## Contributing
 
