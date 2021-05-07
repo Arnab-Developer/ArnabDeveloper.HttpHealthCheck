@@ -7,8 +7,8 @@
     <Authors>Arnab Roy Chowdhury</Authors>
     <Description>Health check of HTTP web application.</Description>
     <Copyright>Copyright (c) 2021 Arnab Roy Chowdhury</Copyright>
-    <PackageProjectUrl>https://github.com/Arnab-Developer/HttpHealthCheck</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Arnab-Developer/HttpHealthCheck</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck</RepositoryUrl>
     <PackageTags>dot-net, http-health-check, c-sharp</PackageTags>
     <PackageReleaseNotes>Health check of HTTP web application.</PackageReleaseNotes>
   </PropertyGroup>

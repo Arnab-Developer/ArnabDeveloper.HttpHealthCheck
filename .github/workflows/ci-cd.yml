@@ -23,13 +23,11 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}    
-    - name: Restore dependencies
-      run: dotnet restore
+        dotnet-version: ${{ env.DOTNET_VERSION }}     
     - name: Build
-      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore    
+      run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
     - name: Test
-      run: dotnet test --configuration ${{ env.CONFIGURATION }}
+      run: dotnet test ArnabDeveloper.HttpHealthCheck.Test/ArnabDeveloper.HttpHealthCheck.Test.csproj --configuration ${{ env.CONFIGURATION }}
 
   github-nuget-push:
     if: ${{ github.event_name == 'push' || github.event_name == 'release' }}
@@ -42,15 +40,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}    
-    - name: Restore dependencies
-      run: dotnet restore
+        dotnet-version: ${{ env.DOTNET_VERSION }}        
     - name: Build
-      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore 
+      run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
     - name: Create nuget package
-      run: dotnet pack --configuration ${{ env.CONFIGURATION }}
+      run: dotnet pack ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
     - name: Push nuget package
-      run: dotnet nuget push ${{ env.NUGET_PACKAGE_NAME }} --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/Arnab-Developer/index.json --skip-duplicate
+      run: dotnet nuget push "ArnabDeveloper.HttpHealthCheck/bin/Release/ArnabDeveloper.HttpHealthCheck.1.0.0.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/Arnab-Developer/index.json" --skip-duplicate
 
   nuget-org-push:
     if: ${{ github.event_name == 'release' }}
@@ -65,12 +61,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}    
-    - name: Restore dependencies
-      run: dotnet restore
+        dotnet-version: ${{ env.DOTNET_VERSION }}        
     - name: Build
-      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore 
+      run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
     - name: Create nuget package
-      run: dotnet pack --configuration ${{ env.CONFIGURATION }}
+      run: dotnet pack ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
     - name: Push nuget package
       run: dotnet nuget push ${{ env.NUGET_PACKAGE_NAME }} --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
