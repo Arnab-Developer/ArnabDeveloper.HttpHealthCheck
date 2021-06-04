@@ -17,7 +17,8 @@ dotnet add package ArnabDeveloper.HttpHealthCheck
 
 ## How to use
 
-There is a console app `ArnabDeveloper.HttpHealthCheck.ConsoleApp` in this repo 
+There is a 
+[dashboard app](https://github.com/Arnab-Developer/HttpHealthCheckDashboard) 
 which uses the library to check health of some http endpoints. This is to show 
 how you can use this library in your app.
 
