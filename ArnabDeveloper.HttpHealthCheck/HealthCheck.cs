@@ -5,10 +5,15 @@ using System.Text;
 
 namespace ArnabDeveloper.HttpHealthCheck
 {
+    /// <inheritdoc cref="IHealthCheck"/>
     public class HealthCheck : IHealthCheck
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
+        /// <summary>
+        /// Creates a new object of HealthCheck.
+        /// </summary>
+        /// <param name="httpClientFactory">Takes an object of HttpClientFactory.</param>
         public HealthCheck(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
