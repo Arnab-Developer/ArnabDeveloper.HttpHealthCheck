@@ -46,10 +46,5 @@
             <param name="credential">Credential to access the endpoint (if any).</param>
             <returns>Returns true if the endpoint is healthy otherwise false.</returns>
         </member>
-        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
-            <summary>
-            IsExternalInit
-            </summary>
-        </member>
     </members>
 </doc>
