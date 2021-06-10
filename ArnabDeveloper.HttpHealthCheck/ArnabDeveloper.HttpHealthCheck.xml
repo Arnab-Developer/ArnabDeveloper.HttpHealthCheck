@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ArnabDeveloper.HttpHealthCheck</name>
+    </assembly>
+    <members>
+        <member name="T:ArnabDeveloper.HttpHealthCheck.ApiCredential">
+            <summary>
+            Api credential model.
+            </summary>
+        </member>
+        <member name="M:ArnabDeveloper.HttpHealthCheck.ApiCredential.#ctor(System.String,System.String)">
+            <summary>
+            Api credential model.
+            </summary>
+        </member>
+        <member name="T:ArnabDeveloper.HttpHealthCheck.ApiDetail">
+            <summary>
+            Api details model.
+            </summary>
+        </member>
+        <member name="M:ArnabDeveloper.HttpHealthCheck.ApiDetail.#ctor(System.String,System.String,ArnabDeveloper.HttpHealthCheck.ApiCredential,System.Boolean)">
+            <summary>
+            Api details model.
+            </summary>
+        </member>
+        <member name="T:ArnabDeveloper.HttpHealthCheck.HealthCheck">
+            <inheritdoc cref="T:ArnabDeveloper.HttpHealthCheck.IHealthCheck"/>
+        </member>
+        <member name="M:ArnabDeveloper.HttpHealthCheck.HealthCheck.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Creates a new object of HealthCheck.
+            </summary>
+            <param name="httpClientFactory">Takes an object of HttpClientFactory.</param>
+        </member>
+        <member name="T:ArnabDeveloper.HttpHealthCheck.IHealthCheck">
+            <summary>
+            Health check of HTTP endpoint.
+            </summary>
+        </member>
+        <member name="M:ArnabDeveloper.HttpHealthCheck.IHealthCheck.IsHealthy(System.String,ArnabDeveloper.HttpHealthCheck.ApiCredential)">
+            <summary>
+            Check if a HTTP endpoint is healthy or not.
+            </summary>
+            <param name="url">URL to be checked.</param>
+            <param name="credential">Credential to access the endpoint (if any).</param>
+            <returns>Returns true if the endpoint is healthy otherwise false.</returns>
+        </member>
+    </members>
+</doc>
