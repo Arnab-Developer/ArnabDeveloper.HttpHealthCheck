@@ -13,6 +13,7 @@
     <PackageTags>dot-net, http-health-check, c-sharp</PackageTags>
     <PackageReleaseNotes>Add NuGet package license</PackageReleaseNotes>
     <Version>1.0.1</Version>
+    <DocumentationFile>ArnabDeveloper.HttpHealthCheck.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
