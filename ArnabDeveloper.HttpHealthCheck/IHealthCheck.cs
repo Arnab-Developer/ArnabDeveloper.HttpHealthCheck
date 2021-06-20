@@ -1,4 +1,6 @@
-﻿namespace ArnabDeveloper.HttpHealthCheck
+﻿using System.Threading.Tasks;
+
+namespace ArnabDeveloper.HttpHealthCheck
 {
     /// <summary>
     /// Health check of HTTP endpoint.
@@ -10,7 +12,9 @@
         /// </summary>
         /// <param name="url">URL to be checked.</param>
         /// <param name="credential">Credential to access the endpoint (if any).</param>
-        /// <returns>Returns true if the endpoint is healthy otherwise false.</returns>
-        bool IsHealthy(string url, ApiCredential? credential = null);
+        /// <returns>
+        /// Returns a task object representing true if the endpoint is healthy otherwise false.
+        /// </returns>
+        Task<bool> IsHealthyAsync(string url, ApiCredential? credential = null);
     }
 }
