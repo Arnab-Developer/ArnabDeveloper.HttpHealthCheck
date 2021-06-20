@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ArnabDeveloper.HttpHealthCheck
 {
@@ -19,7 +20,7 @@ namespace ArnabDeveloper.HttpHealthCheck
             _httpClientFactory = httpClientFactory;
         }
 
-        bool IHealthCheck.IsHealthy(string url, ApiCredential? credential)
+        async Task<bool> IHealthCheck.IsHealthy(string url, ApiCredential? credential)
         {
             HttpClient httpClient = _httpClientFactory.CreateClient();
             if (credential != null)
@@ -28,7 +29,7 @@ namespace ArnabDeveloper.HttpHealthCheck
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                     "Basic", Convert.ToBase64String(byteArray));
             }
-            HttpResponseMessage consultationApiResponseMessage = httpClient.GetAsync(url).Result;
+            HttpResponseMessage consultationApiResponseMessage = await httpClient.GetAsync(url);
             return consultationApiResponseMessage.IsSuccessStatusCode;
         }
     }
