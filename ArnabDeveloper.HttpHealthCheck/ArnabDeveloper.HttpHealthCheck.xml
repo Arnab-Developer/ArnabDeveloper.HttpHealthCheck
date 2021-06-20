@@ -38,7 +38,7 @@
             Health check of HTTP endpoint.
             </summary>
         </member>
-        <member name="M:ArnabDeveloper.HttpHealthCheck.IHealthCheck.IsHealthy(System.String,ArnabDeveloper.HttpHealthCheck.ApiCredential)">
+        <member name="M:ArnabDeveloper.HttpHealthCheck.IHealthCheck.IsHealthyAsync(System.String,ArnabDeveloper.HttpHealthCheck.ApiCredential)">
             <summary>
             Check if a HTTP endpoint is healthy or not.
             </summary>

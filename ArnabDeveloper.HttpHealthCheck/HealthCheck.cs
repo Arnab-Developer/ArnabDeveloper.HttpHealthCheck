@@ -20,7 +20,7 @@ namespace ArnabDeveloper.HttpHealthCheck
             _httpClientFactory = httpClientFactory;
         }
 
-        async Task<bool> IHealthCheck.IsHealthy(string url, ApiCredential? credential)
+        async Task<bool> IHealthCheck.IsHealthyAsync(string url, ApiCredential? credential)
         {
             HttpClient httpClient = _httpClientFactory.CreateClient();
             if (credential != null)

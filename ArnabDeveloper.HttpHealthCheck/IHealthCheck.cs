@@ -15,6 +15,6 @@ namespace ArnabDeveloper.HttpHealthCheck
         /// <returns>
         /// Returns a task object representing true if the endpoint is healthy otherwise false.
         /// </returns>
-        Task<bool> IsHealthy(string url, ApiCredential? credential = null);
+        Task<bool> IsHealthyAsync(string url, ApiCredential? credential = null);
     }
 }
