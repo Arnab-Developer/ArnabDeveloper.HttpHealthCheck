@@ -3,11 +3,7 @@
 [![CI CD](https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck/actions/workflows/ci-cd.yml)
 ![Nuget](https://img.shields.io/nuget/v/ArnabDeveloper.HttpHealthCheck)
 
-This is a library to check health of HTTP endpoint.
-
-## How to install
-
-This library has been hosted in 
+This is a library to check health of HTTP endpoint. It has been hosted in 
 [NuGet](https://www.nuget.org/packages/ArnabDeveloper.HttpHealthCheck/). 
 Use below command to install this in your .NET application.
 
@@ -15,7 +11,22 @@ Use below command to install this in your .NET application.
 dotnet add package ArnabDeveloper.HttpHealthCheck
 ```
 
-## How to use
+Use any HTTP endpoint to check their health.
+
+```csharp
+IHttpClientFactory httpClientFactory; // Use ASP.NET DI to build this
+IHealthCheck healthCheck = new HealthCheck(httpClientFactory);
+string urlToCheck = "<your http url>";
+bool isApiHealthy = await _healthCheck.IsHealthyAsync(urlToCheck);
+if (isApiHealthy)
+{
+    // URL is healthy
+}
+else
+{
+    // URL is unhealthy
+}
+```
 
 There is a 
 [dashboard app](https://github.com/Arnab-Developer/HttpHealthCheckDashboard) 
