@@ -9,7 +9,7 @@ on:
     types: [ created ]
 
 env:
-  DOTNET_VERSION: 5.0.300
+  DOTNET_VERSION: 6.0.x
   CONFIGURATION: Release
 
 jobs:
