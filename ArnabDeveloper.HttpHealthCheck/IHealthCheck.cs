@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace ArnabDeveloper.HttpHealthCheck
+﻿namespace ArnabDeveloper.HttpHealthCheck
 {
     /// <summary>
     /// Health check of HTTP endpoint.
