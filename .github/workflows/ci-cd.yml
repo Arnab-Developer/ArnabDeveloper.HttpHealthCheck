@@ -27,6 +27,8 @@ jobs:
       run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
     - name: Test
       run: dotnet test ArnabDeveloper.HttpHealthCheck.Test/ArnabDeveloper.HttpHealthCheck.Test.csproj --configuration ${{ env.CONFIGURATION }}
+    - name: Create nuget package
+      run: dotnet pack ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
 
   github-nuget-push:
     if: ${{ github.event_name == 'push' || github.event_name == 'release' }}
