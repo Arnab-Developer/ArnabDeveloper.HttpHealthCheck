@@ -1,33 +1,32 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
 
-namespace ArnabDeveloper.HttpHealthCheck
+namespace ArnabDeveloper.HttpHealthCheck;
+
+/// <inheritdoc cref="IHealthCheck"/>
+public class HealthCheck : IHealthCheck
 {
-    /// <inheritdoc cref="IHealthCheck"/>
-    public class HealthCheck : IHealthCheck
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    /// <summary>
+    /// Creates a new object of HealthCheck.
+    /// </summary>
+    /// <param name="httpClientFactory">Takes an object of HttpClientFactory.</param>
+    public HealthCheck(IHttpClientFactory httpClientFactory)
     {
-        private readonly IHttpClientFactory _httpClientFactory;
+        _httpClientFactory = httpClientFactory;
+    }
 
-        /// <summary>
-        /// Creates a new object of HealthCheck.
-        /// </summary>
-        /// <param name="httpClientFactory">Takes an object of HttpClientFactory.</param>
-        public HealthCheck(IHttpClientFactory httpClientFactory)
+    async Task<bool> IHealthCheck.IsHealthyAsync(string url, ApiCredential? credential)
+    {
+        HttpClient httpClient = _httpClientFactory.CreateClient();
+        if (credential != null)
         {
-            _httpClientFactory = httpClientFactory;
+            var byteArray = Encoding.ASCII.GetBytes($"{credential.UserName}:{credential.Password}");
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+                "Basic", Convert.ToBase64String(byteArray));
         }
-
-        async Task<bool> IHealthCheck.IsHealthyAsync(string url, ApiCredential? credential)
-        {
-            HttpClient httpClient = _httpClientFactory.CreateClient();
-            if (credential != null)
-            {
-                var byteArray = Encoding.ASCII.GetBytes($"{credential.UserName}:{credential.Password}");
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
-                    "Basic", Convert.ToBase64String(byteArray));
-            }
-            HttpResponseMessage consultationApiResponseMessage = await httpClient.GetAsync(url);
-            return consultationApiResponseMessage.IsSuccessStatusCode;
-        }
+        HttpResponseMessage consultationApiResponseMessage = await httpClient.GetAsync(url);
+        return consultationApiResponseMessage.IsSuccessStatusCode;
     }
 }

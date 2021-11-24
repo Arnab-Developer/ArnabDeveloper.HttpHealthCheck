@@ -1,8 +1,5 @@
 # HTTP health check
 
-[![CI CD](https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck/actions/workflows/ci-cd.yml)
-![Nuget](https://img.shields.io/nuget/v/ArnabDeveloper.HttpHealthCheck)
-
 This is a library to check health of HTTP endpoint. It has been hosted in 
 [NuGet](https://www.nuget.org/packages/ArnabDeveloper.HttpHealthCheck/). 
 Use below command to install this in your .NET application.
