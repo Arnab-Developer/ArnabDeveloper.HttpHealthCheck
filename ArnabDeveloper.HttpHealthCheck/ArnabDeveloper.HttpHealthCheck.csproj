@@ -11,8 +11,8 @@
     <PackageProjectUrl>https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck</RepositoryUrl>
     <PackageTags>dot-net, http-health-check, c-sharp</PackageTags>
-    <PackageReleaseNotes>Separate readme for NuGet</PackageReleaseNotes>
-    <Version>1.0.5</Version>
+    <PackageReleaseNotes>Update nuget readme</PackageReleaseNotes>
+    <Version>1.0.6</Version>
     <DocumentationFile>ArnabDeveloper.HttpHealthCheck.xml</DocumentationFile>
     <PackageReadmeFile>NuGetReadme.md</PackageReadmeFile>
     <IncludeSymbols>true</IncludeSymbols>
