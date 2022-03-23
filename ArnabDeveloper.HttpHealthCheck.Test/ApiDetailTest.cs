@@ -14,6 +14,7 @@ public class ApiDetailTest
             new ApiCredential("u1", "p1"),
             true
         );
+
         Assert.Equal("api1", apiDetail.Name);
         Assert.Equal("https://api1/hc", apiDetail.Url);
         Assert.Equal("u1", apiDetail.ApiCredential!.UserName);
