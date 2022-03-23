@@ -19,14 +19,18 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2      
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}     
+        dotnet-version: ${{ env.DOTNET_VERSION }}  
+        
     - name: Build
       run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
+
     - name: Test
       run: dotnet test ArnabDeveloper.HttpHealthCheck.Test/ArnabDeveloper.HttpHealthCheck.Test.csproj --configuration ${{ env.CONFIGURATION }}
+
     - name: Create nuget package
       run: dotnet pack ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
 
@@ -37,11 +41,14 @@ jobs:
       security-events: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2        
+        uses: actions/checkout@v2 
+        
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1        
+        uses: github/codeql-action/init@v1   
+        
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v1        
+        uses: github/codeql-action/autobuild@v1   
+        
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
 
@@ -52,15 +59,19 @@ jobs:
     name: GitHub nuget push
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2      
+      uses: actions/checkout@v2  
+      
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}        
+        dotnet-version: ${{ env.DOTNET_VERSION }} 
+        
     - name: Build
       run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
+
     - name: Create nuget package
       run: dotnet pack ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
+
     - name: Push nuget package
       run: dotnet nuget push "ArnabDeveloper.HttpHealthCheck/bin/Release/ArnabDeveloper.HttpHealthCheck.1.0.6.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/Arnab-Developer/index.json" --skip-duplicate
 
@@ -74,14 +85,18 @@ jobs:
       url: "https://www.nuget.org/packages/ArnabDeveloper.HttpHealthCheck"
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2      
+      uses: actions/checkout@v2    
+      
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}        
+        dotnet-version: ${{ env.DOTNET_VERSION }}   
+        
     - name: Build
       run: dotnet build ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
+
     - name: Create nuget package
       run: dotnet pack ArnabDeveloper.HttpHealthCheck/ArnabDeveloper.HttpHealthCheck.csproj --configuration ${{ env.CONFIGURATION }}
+
     - name: Push nuget package
       run: dotnet nuget push "ArnabDeveloper.HttpHealthCheck/bin/Release/ArnabDeveloper.HttpHealthCheck.1.0.6.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
