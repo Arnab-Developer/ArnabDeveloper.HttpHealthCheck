@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <Authors>Arnab Roy Chowdhury</Authors>
     <Description>Health check of HTTP web application.</Description>
-    <Copyright>Copyright (c) 2021 Arnab Roy Chowdhury</Copyright>
+    <Copyright>Copyright (c) 2022 Arnab Roy Chowdhury</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Arnab-Developer/ArnabDeveloper.HttpHealthCheck</RepositoryUrl>
