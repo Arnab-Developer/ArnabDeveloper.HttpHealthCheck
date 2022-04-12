@@ -14,7 +14,7 @@ Use any HTTP endpoint to check their health.
 IHttpClientFactory httpClientFactory; // Use ASP.NET DI to build this
 IHealthCheck healthCheck = new HealthCheck(httpClientFactory);
 string urlToCheck = "<your http url>";
-bool isApiHealthy = await _healthCheck.IsHealthyAsync(urlToCheck);
+bool isApiHealthy = await healthCheck.IsHealthyAsync(urlToCheck);
 if (isApiHealthy)
 {
     // URL is healthy
