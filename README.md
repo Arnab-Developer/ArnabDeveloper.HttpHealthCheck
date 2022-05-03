@@ -8,6 +8,8 @@ Use below command to install this in your .NET application.
 dotnet add package ArnabDeveloper.HttpHealthCheck
 ```
 
+
+
 Use any HTTP endpoint to check their health.
 
 ```csharp
